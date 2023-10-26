@@ -6,7 +6,7 @@ import './index.css'
 
 const Header = props => {
   const {history} = props
-  const Logout = () => {
+  const onLogout = () => {
     Cookies.remove('jwt_token')
     history.replace('/login')
   }
@@ -20,7 +20,7 @@ const Header = props => {
             alt="website logo"
           />
 
-          <button type="button" className="nav-mobile-btn">
+          <button type="button" className="nav-mobile-btn" onClick={onLogout}>
             <img
               src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-log-out-img.png"
               alt="nav logout"
@@ -46,7 +46,7 @@ const Header = props => {
               <li className="nav-menu-item">Cart</li>
             </Link>
           </ul>
-          <button type="button" className="logout-desktop-btn" onClick={Logout}>
+          <button type="button" className="logout-desktop-btn" onClick={onLogout}>
             Logout
           </button>
         </div>
